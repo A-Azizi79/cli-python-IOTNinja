@@ -47,6 +47,10 @@ class Connection(ABC) :
     @abstractmethod
     def freezConnection(self):
         pass
+    
+    @abstractmethod
+    def emit(self, name, ack):
+        pass
 
 class MqttConnection(Connection):
     def connect(server):
@@ -90,26 +94,9 @@ class SocketConnection(Connection):
 
     def freezConnection(self):
         pass
-
-
-class UiController:
-    def __init__(self):
-        self.parentController = {}
     
-    def addControllerLayout(self, layout, *child):
-        pass
+    def emit(self, name, ack):
+        self.socket.emit(name, callback= ack)
 
-class Layout(enum.Enum):
-    vertical = 1001
-    horizontal = 1002
-
-class Controller:
-    pass
-
-class Button(Controller):
-    pass
-
-
-class IOTNinjaImpl(IOTNinja):
-    def __init__(self, deviceName, description, server, port):
-        super().__init__(deviceName, description, server, port)
+globalConnection = SocketConnection()
+    
