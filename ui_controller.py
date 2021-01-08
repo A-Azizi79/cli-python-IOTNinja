@@ -1,6 +1,7 @@
 from iot_ninja import globalConnection
 import requests
-import constant
+
+import key_constants
 
 class UiController:
     def __init__(self):

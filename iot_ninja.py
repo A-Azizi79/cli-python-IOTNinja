@@ -1,33 +1,38 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 from socketio import client as Socket
 import paho.mqtt.client as mqtt
 import json
+import enum
+
 
 class ConnectionMode(enum.Enum):
     socket = 1001
     mqtt = 1002
 
-class IOTNinja(ABC) :
-    def __init__(self, deviceName, description, server, port):
-        self.deviceName = deviceName
+
+class IOTNinja(ABC):
+
+    def __init__(self, device_name, description, server, port, connection_mode, ui_controller):
+        self.deviceName = device_name
         self.deviceName = description
         self.server = server
         self.port = port
-    
-    def setConnectionMode(connectionMode):
-        self.connectionMode = connectionMode
-    
-      
+        self.connection_mode = connection_mode
+        self.ui_controller = ui_controller
+
+    def change_connection_mode_to(self, connection_mode):
+        self.connection_mode = connection_mode
+
     @abstractmethod
-    def onConnectionOpen():
+    def on_connection_open(self):
         pass
 
     @abstractmethod
-    def onDisconnected():
+    def on_disconnected(self):
         pass
 
 
-class Connection(ABC) :
+class Connection(ABC):
     @abstractmethod
     def connect(self, server):
         pass
@@ -35,9 +40,9 @@ class Connection(ABC) :
     @abstractmethod
     def disconnect(self, server):
         pass
-    
+
     @abstractmethod
-    def defineEvent(self, eventName, callBack) :
+    def define_event(self, event_name, callback):
         pass
 
     @abstractmethod
@@ -45,28 +50,34 @@ class Connection(ABC) :
         pass
 
     @abstractmethod
-    def freezConnection(self):
+    def freeze_connection(self):
         pass
-    
+
     @abstractmethod
     def emit(self, name, ack):
         pass
 
+
 class MqttConnection(Connection):
-    def connect(server):
+
+    def connect(self, server):
         pass
 
-    def disconnect(server):
-        pass
-    
-    def action():
+    def disconnect(self, server):
         pass
 
-    def listener(callback):
+    def define_event(self, event_name, callback):
         pass
 
-    def freezConnection():
+    def listener(self, callback):
         pass
+
+    def freeze_connection(self):
+        pass
+
+    def emit(self, name, ack):
+        pass
+
 
 class SocketConnection(Connection):
 
@@ -74,29 +85,29 @@ class SocketConnection(Connection):
         self.socket = Socket.Client()
         self.socket.connect(address)
 
-    def connect(self, server, address):
-        if(self.socket.connected):
+    def connect(self, server):
+        if self.socket.connected:
             print("already connected!")
-        else :
-            self.socket.connect()
-                
+        else:
+            self.socket.connect("")
+
     def disconnect(self, server):
-        if(self.socket.connected):
-            self.socket.disconnect
+        if self.socket.connected:
+            self.socket.disconnect()
         else:
             print("there is no connection!")
-    
-    def defineEvent(self, eventName, callback):
-        self.socket.on(eventName, callback)
+
+    def define_event(self, event_name, callback):
+        self.socket.on(event_name, callback)
 
     def listener(self, callback):
         pass
 
-    def freezConnection(self):
+    def freeze_connection(self):
         pass
-    
-    def emit(self, name, ack):
-        self.socket.emit(name, callback= ack)
 
-globalConnection = SocketConnection()
-    
+    def emit(self, name, ack):
+        self.socket.emit(name, callback=ack)
+
+
+globalConnection = SocketConnection("")
