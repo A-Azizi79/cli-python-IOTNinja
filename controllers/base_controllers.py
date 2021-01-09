@@ -17,6 +17,7 @@ class Scaffold(ABC):
 
 class Controller(ABC):
     def __init__(self, c_id):
+        self.c_id = c_id
         self.controller = {constant.ID: c_id}
 
     def _get(self):
