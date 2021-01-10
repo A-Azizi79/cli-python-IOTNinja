@@ -1,12 +1,14 @@
 from abc import ABC, abstractmethod
 from base_controllers import ControllerGroup
+from iot_ninja import Context
 import exceptions
 import json
 
 
-class Scaffold(ABC):
-    def __init__(self):
-        self.parentController = []
+class Scaffold(ABC, Context):
+    def __init__(self, connection):
+        super().__init__(connection)
+        self.__parentController = []
 
     @abstractmethod
     def add_controller_group(self, layout):
@@ -17,9 +19,9 @@ class Scaffold(ABC):
         pass
 
 
-class AppScaffold(Scaffold):
-    def __init__(self):
-        super().__init__()
+class IOTNinjaApp(Scaffold):
+    def __init__(self, connection):
+        super().__init__(connection)
 
     def add_controller_group(self, controller_group):
         if exceptions.is_valid_param(ControllerGroup, controller_group):
