@@ -1,5 +1,4 @@
-from base_controllers import Controller
-from iot_ninja import globalConnection
+from base_controllers import Controller, DynamicController
 import key_constants as constant
 import requests
 
@@ -13,37 +12,36 @@ class TextController(Controller):
         self.controller[constant.COLOR] = color
 
 
-class InputController(Controller):
+class InputController(DynamicController):
     def __init__(self, c_id):
         super().__init__(c_id)
         self._define_type("input")
 
-    # noinspection PyMethodMayBeStatic
     def get_value(self, callback):
-        globalConnection.emit(constant.GET_VALUE, callback)
+        self.context.connection.emit(constant.GET_VALUE, callback)
 
 
-class ButtonController(Controller):
+class ButtonController(DynamicController):
     def __init__(self, c_id, on_click_listener):
         super().__init__(c_id)
         self._define_type("button")
-        globalConnection.defineEvent("btn_" + str(c_id), on_click_listener)
+        self.context.connection.defineEvent("btn_" + str(c_id), on_click_listener)
 
 
-class ImageController(Controller):
+class ImageController(DynamicController):
     def __init__(self, c_id):
         super().__init__(c_id)
         self._define_type("image")
 
-    # noinspection PyMethodMayBeStatic
     def set_image(self, path):
         files = {'media': open(path, 'rb')}
-        requests.post(constant.SERVER_ADDRESS, files=files)
+
+        self.context.httpRequests.post(constant.SERVER_ADDRESS, files)
 
 
-class ChartController(Controller):
+class ChartController(DynamicController):
     def __init__(self, c_id):
         super().__init__(c_id)
 
     def add_data(self, data):
-        globalConnection.emit("chart_add_" + str(self.c_id), data)
+        self.context.connection.emit("chart_add_" + str(self.c_id), data)

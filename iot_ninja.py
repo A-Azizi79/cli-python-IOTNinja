@@ -4,6 +4,7 @@ import paho.mqtt.client as mqtt
 import json
 import enum
 import key_constants as constant
+import requests
 
 
 class ConnectionMode(enum.Enum):
@@ -12,8 +13,9 @@ class ConnectionMode(enum.Enum):
 
 
 class Context(ABC):
-    def __init__(self, connection):
+    def __init__(self, connection, http_requests):
         self.connection = connection
+        self.httpRequests = http_requests
 
 
 class IOTNinja(ABC):
@@ -32,7 +34,30 @@ class IOTNinja(ABC):
         global_connection = connection
 
 
+class HttpRequests(ABC):
+    def __init__(self, url):
+        self.url = url
+
+    @abstractmethod
+    def get(self, url, params=None, **kwargs):
+        pass
+
+    @abstractmethod
+    def post(self, url, data=None, json=None, **kwargs):
+        return requests.post(url, data)
+
+
+class HttpRequestsImpl(HttpRequests):
+
+    def get(self, url, params=None, **kwargs):
+        pass
+
+    def post(self, url, data=None, json=None, **kwargs):
+        pass
+
+
 class Connection(ABC):
+
     @abstractmethod
     def connection_type(self, ):
         pass

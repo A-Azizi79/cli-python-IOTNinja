@@ -25,6 +25,12 @@ class Controller(ABC, ControllerCore):
         self.controller[constant.TYPE] = controller_type
 
 
+class DynamicController(ABC, Controller):
+    def __init__(self, c_id, context):
+        super().__init__(c_id)
+        self.context = context
+
+
 class ControllerGroup(ABC, ControllerCore):
     def __init__(self, cg_id):
         self.controllerGroup = {constant.ID: cg_id, constant.CHILDREN: []}
