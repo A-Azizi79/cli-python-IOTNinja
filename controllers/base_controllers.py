@@ -1,41 +1,40 @@
 import key_constants as constant
 from abc import ABC, abstractmethod
+import exceptions
 
 
-class Scaffold(ABC):
-    def __init__(self):
-        self.parentController = {}
-
+class ControllerCore(ABC):
     @abstractmethod
-    def add_controller_group(self, layout):
+    def _build(self):
         pass
 
     @abstractmethod
-    def build(self):
+    def define_type(self, controller_type):
         pass
 
 
-class Controller(ABC):
+class Controller(ABC, ControllerCore):
     def __init__(self, c_id):
         self.c_id = c_id
         self.controller = {constant.ID: c_id}
 
-    def _get(self):
+    def _build(self):
         return self.controller
 
     def _define_type(self, controller_type):
         self.controller[constant.TYPE] = controller_type
 
 
-class ControllerGroup(ABC):
+class ControllerGroup(ABC, ControllerCore):
     def __init__(self, cg_id):
-        self.controllerGroup = {constant.ID: cg_id, constant.CHILDS: []}
+        self.controllerGroup = {constant.ID: cg_id, constant.CHILDREN: []}
 
-    def _get(self):
-        return self.controllerGroup
+    def _build(self):
+        return self.controller
 
     def add(self, controller):
-        if isinstance(controller, Controller):
-            self.controllerGroup[constant.CHILDS].append(controller)
-        else:
-            raise Exception("your controller need to be instance of Controller")
+        if exceptions.is_valid_param(Controller, controller):
+            self.controllerGroup[constant.CHILDREN].append(controller)
+
+    def _define_type(self, controller_type):
+        self.controllerGroup[constant.TYPE] = controller_type

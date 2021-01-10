@@ -1,6 +1,6 @@
 TYPE = "controllerType"
 ID = "id"
-CHILDS = "childs"
+CHILDREN = "childrens"
 GET_VALUE = "getValue"
 SERVER_ADDRESS = ""
 SIZE = "size"
