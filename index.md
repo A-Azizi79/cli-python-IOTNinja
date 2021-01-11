@@ -1,6 +1,6 @@
 ## خوش آمدید
 
-You can use the [editor on GitHub](https://github.com/NinjaGeeks/cli-python-IOTNinja/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+ شما میتوانید با استفاده از این پروژه
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
