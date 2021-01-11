@@ -47,7 +47,14 @@ run_app(MyApp, SocketConnection(), "192.168.9.6", "8080", "raspberryPI", "normal
 ```
 
 
-## راهنمای فارسی
+## Documentation in english language 🇬🇧
+
+
+<div dir="rtl">
+
+## مستندات 🇮🇷 
+
+</div>
 
 
 ## Contributing
