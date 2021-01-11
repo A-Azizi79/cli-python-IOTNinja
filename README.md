@@ -2,7 +2,7 @@
 
 IOTNinja is a Python library for dealing with word pluralization.
 
-![alt text](https://uupload.ir/files/ee88_group_1_2x.png)
+![alt text](http://www.upsara.com/images/x581442_.png)
 
 </br>
 </br>
