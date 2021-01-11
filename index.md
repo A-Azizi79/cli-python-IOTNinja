@@ -1,15 +1,4 @@
-## خوش آمدید
-
- <div dir="rtl">عنوان</div>
-
-<div dir="rtl"></h2>قائمة</h2></div>
-<div dir="rtl"><ul>
-  <li>١. البند 1</li>
-  <li>٢.البند 2</li>
-  <li>٣.البند 3</li>
-</ul></div>
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## welcome to IOTNinja
 
 ### Markdown
 
