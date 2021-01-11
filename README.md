@@ -46,6 +46,10 @@ run_app(MyApp, SocketConnection(), "192.168.9.6", "8080", "raspberryPI", "normal
 
 ```
 
+
+## راهنمای فارسی
+
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
