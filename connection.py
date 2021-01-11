@@ -1,37 +1,6 @@
 from abc import ABC, abstractmethod
-from socketio import client as Socket
-import paho.mqtt.client as mqtt
-import json
-import enum
-import key_constants as constant
 import requests
-
-
-class ConnectionMode(enum.Enum):
-    socket = 1001
-    mqtt = 1002
-
-
-class Context(ABC):
-    def __init__(self, connection, http_requests):
-        self.connection = connection
-        self.httpRequests = http_requests
-
-
-class IOTNinja(ABC):
-
-    def __init__(self, device_name, description, server, port, connection, scaffold):
-        self.identity = {
-            "deviceName": device_name,
-            "description": description,
-            "scaffold": scaffold.parentController
-        }
-        self.deviceName = device_name
-        self.deviceName = description
-        self.server = server
-        self.port = port
-        self.scaffold = scaffold
-        global_connection = connection
+from socketio import client as socket
 
 
 class HttpRequests(ABC):
@@ -59,7 +28,7 @@ class HttpRequestsImpl(HttpRequests):
 class Connection(ABC):
 
     @abstractmethod
-    def connection_type(self, ):
+    def connection_type(self):
         pass
 
     @abstractmethod
@@ -84,11 +53,18 @@ class Connection(ABC):
 
     @abstractmethod
     def emit(self, name, data, ack):
+        pass
+
+    @abstractmethod
+    def connected(self):
         pass
 
 
 class MqttConnection(Connection):
 
+    def connection_type(self):
+        pass
+
     def connect(self, server):
         pass
 
@@ -105,13 +81,16 @@ class MqttConnection(Connection):
         pass
 
     def emit(self, name, data, ack):
+        pass
+
+    def connected(self):
         pass
 
 
 class SocketConnection(Connection):
 
     def __init__(self, address):
-        self.socket = Socket.Client()
+        self.socket = socket.Client()
         self.socket.connect(address)
 
     def connect(self, server):
@@ -141,14 +120,5 @@ class SocketConnection(Connection):
     def connection_type(self):
         return "socket"
 
-
-class Run:
-    def __init__(self, app):
-        if isinstance(app, IOTNinja):
-            global_connection.connect(app.server + ":" + str(app.port))
-            global_connection.emit(constant.IDENTITY, app.identity)
-        else:
-            raise Exception("you need to pass app !")
-
-
-global_connection = SocketConnection("")
+    def connected(self):
+        return self.socket.connected

@@ -1,6 +1,5 @@
 from base_controllers import Controller, DynamicController
 import key_constants as constant
-import requests
 
 
 class TextController(Controller):
@@ -13,8 +12,8 @@ class TextController(Controller):
 
 
 class InputController(DynamicController):
-    def __init__(self, c_id):
-        super().__init__(c_id)
+    def __init__(self, c_id, context):
+        super().__init__(c_id, context)
         self._define_type("input")
 
     def get_value(self, callback):
@@ -22,15 +21,15 @@ class InputController(DynamicController):
 
 
 class ButtonController(DynamicController):
-    def __init__(self, c_id, on_click_listener):
-        super().__init__(c_id)
+    def __init__(self, c_id, context, on_click_listener):
+        super().__init__(c_id, context)
         self._define_type("button")
         self.context.connection.defineEvent("btn_" + str(c_id), on_click_listener)
 
 
 class ImageController(DynamicController):
-    def __init__(self, c_id):
-        super().__init__(c_id)
+    def __init__(self, c_id, context):
+        super().__init__(c_id, context)
         self._define_type("image")
 
     def set_image(self, path):
@@ -40,8 +39,8 @@ class ImageController(DynamicController):
 
 
 class ChartController(DynamicController):
-    def __init__(self, c_id):
-        super().__init__(c_id)
+    def __init__(self, c_id, context):
+        super().__init__(c_id, context)
 
     def add_data(self, data):
         self.context.connection.emit("chart_add_" + str(self.c_id), data)
