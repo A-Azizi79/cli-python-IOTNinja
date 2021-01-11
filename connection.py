@@ -89,9 +89,8 @@ class MqttConnection(Connection):
 
 class SocketConnection(Connection):
 
-    def __init__(self, address):
+    def __init__(self):
         self.socket = socket.Client()
-        self.socket.connect(address)
 
     def connect(self, server):
         if self.socket.connected:

@@ -3,15 +3,29 @@ from presentation.screen import Screen
 
 
 class Context(ABC):
-    def __init__(self, connection, http_requests):
-        self.connection = connection
-        self.httpRequests = http_requests
+
+    def __init__(self):
+        self._connection = None
+        self._http_request = None
+
+    @property
+    def http_request(self):
+        return self._http_request
+
+    @http_request.setter
+    def http_request(self, new_obj):
+        self._http_request = new_obj
+
+    @property
+    def connection(self):
+        return self._connection
+
+    @connection.setter
+    def connection(self, new_obj):
+        self._connection = new_obj
 
 
-class App(ABC, Context):
-
-    def __init__(self, connection, http_request):
-        super().__init__(connection, http_request)
+class App(Context):
 
     @abstractmethod
     def on_connected(self):
@@ -28,3 +42,13 @@ class App(ABC, Context):
     @abstractmethod
     def on_connection_problem(self, msg):
         pass
+
+
+class Cont(ABC):
+    @abstractmethod
+    def msg(self):
+        pass
+
+
+class TS(Cont):
+    pass
