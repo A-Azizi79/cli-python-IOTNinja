@@ -9,3 +9,5 @@ TEXT = "text"
 IDENTITY = "identity"
 DEVICE_NAME = "deviceName"
 DEVICE_DESCRIPTION = "deviceDescription"
+
+CMD_SET_TEXT = "settext_"

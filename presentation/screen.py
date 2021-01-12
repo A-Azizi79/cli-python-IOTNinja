@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from presentation.base_controllers import ControllerGroup
 
 
 class BaseScreen(ABC):
@@ -14,10 +15,10 @@ class BaseScreen(ABC):
 
 class Screen(BaseScreen):
     def __init__(self):
-        self.parent = []
+        self.__children = []
 
-    def add_controller_group(self, layout):
-        pass
+    def add_controller_group(self, group: ControllerGroup):
+        self.__children.append(group)
 
     def _build(self):
         pass

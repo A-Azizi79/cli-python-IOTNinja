@@ -9,11 +9,12 @@ class ControllerCore(ABC):
         pass
 
     @abstractmethod
-    def define_type(self, controller_type):
+    def __define_type(self, controller_type):
         pass
 
 
-class Controller(ABC, ControllerCore):
+class Controller(ControllerCore):
+
     def __init__(self, c_id):
         self.c_id = c_id
         self.controller = {constant.ID: c_id}
@@ -21,26 +22,26 @@ class Controller(ABC, ControllerCore):
     def _build(self):
         return self.controller
 
-    def _define_type(self, controller_type):
+    def __define_type(self, controller_type):
         self.controller[constant.TYPE] = controller_type
 
 
-class DynamicController(ABC, Controller):
+class DynamicController(Controller):
     def __init__(self, c_id, context):
         super().__init__(c_id)
         self.context = context
 
 
-class ControllerGroup(ABC, ControllerCore):
+class ControllerGroup(ControllerCore):
     def __init__(self, cg_id):
-        self.controllerGroup = {constant.ID: cg_id, constant.CHILDREN: []}
+        self.__controllerGroup = {constant.ID: cg_id, constant.CHILDREN: []}
 
     def _build(self):
-        return self.controller
+        return self.__controllerGroup
 
-    def add(self, controller):
+    def add(self, controller: Controller):
         if exceptions.is_valid_param(Controller, controller):
-            self.controllerGroup[constant.CHILDREN].append(controller)
+            self.__controllerGroup[constant.CHILDREN].append(controller)
 
-    def _define_type(self, controller_type):
-        self.controllerGroup[constant.TYPE] = controller_type
+    def __define_type(self, controller_type):
+        self.__controllerGroup[constant.TYPE] = controller_type
