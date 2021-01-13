@@ -78,14 +78,13 @@ ControllerGroup ها گروهی از کنترلر (Controller) ها هستند �
 ## مستندات 🇮🇷 
 
 </div>
-
-App class
-| Method Name           | params  | return type | brief description                                                     |
-|-----------------------|---------|-------------|-----------------------------------------------------------------------|
-| build_screen          | parent  | Screen      | <div dir="rtl">کنتزلر ها و گروه کنترلر های خود را در اینجا تعریف کنید سپس آنرا در آبجکت parent  اضافه کنید و آنرا برگردانید</div>  |
-| on_connected          |         | None        | Called when successfully connected                                    |
-| on_disconnected       |         | None        | Called when disconnected                                              |
-| on_connection_problem | message | None        | Called when we have trouble in communicating                          |
+| Method Name           | params  | return type | توضیح کوتاه                                                                                                |
+|-----------------------|---------|-------------|------------------------------------------------------------------------------------------------------------|
+| build_screen          | parent  | Screen      | <div dir="rtl">کنتزلر ها و گروه کنترلر های خود را در اینجا تعریف کنید سپس آنرا در آبجکت parent  اضافه کنید و آنرا برگردانید       </div>                                                                           |
+| on_connected          |         | None        | زمانی صدا زده میشود که ارتباط با سرور برقرار شود                                                           |
+| on_disconnected       |         | None        | زمانی صدا زده میشود که ارتباط با سرور قطع شود                                                              |
+| on_connection_problem | message | None        | <div dir="rtl">
+ اگر مشکلی در برقراری ارتباط با سرور پیشاید صدا زده میشود که message حاوی علت ایجاد شدن مشکل را نشان میدهد </div>|
 
 
 ## <img src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" data-canonical-src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" width="20" height="20" />  Donation
