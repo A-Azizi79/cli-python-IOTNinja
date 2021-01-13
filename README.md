@@ -76,7 +76,7 @@ ControllerGroup ها گروهی از کنترلر (Controller) ها هستند �
 خب خب همه ی این جذابیت ها توی تابع build_screen رخ میده این تابع یک پارامتر داره به اسم parent  که این پارامتر همون صفحه اصلی ما تو موبایلمون و یا توی وبه این پارامتر ما که یه آبجکت از کلاس Screen  هست یک متد داره به اسم add_controller_group که این تابع میاد گروهی از کنترلر هامون رو به صفحه وبمون یا موبایلمون اضافه میکنه 
  
 ## مستندات 🇮🇷 
-</div>
+
 
 App class
 | Method Name           | params  | return type | brief description                                                                                                 |
@@ -85,7 +85,7 @@ App class
 | on_connected          |         | None        | Called when successfully connected                                                                                |
 | on_disconnected       |         | None        | Called when disconnected                                                                                          |
 | on_connection_problem | message | None        | Called when we have trouble in communicating                                                                      | 
-
+</div>
 ## <img src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" data-canonical-src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" width="20" height="20" />  Donation
 
 If you like, You can donate us 😇
