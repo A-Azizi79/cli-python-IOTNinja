@@ -71,13 +71,11 @@ ControllerGroup ها گروهی از کنترلر (Controller) ها هستند �
 
 </div>
 
-## Donation
-<img src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" data-canonical-src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" width="50" height="50" /> If you like, You can donate us 😇
+## <img src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" data-canonical-src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" width="25" height="25" />  Donation
 
+If you like, You can donate us 😇
 Our btc wallet address : 12dFaoaBHNySGUCaBiih6YSkYQRQdDug8f
 
-
-You can donate us in btc 
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
