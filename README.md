@@ -72,13 +72,12 @@ ControllerGroup ها گروهی از کنترلر (Controller) ها هستند �
 
 App class
 
-
-| Method Name           | Description | params |
-|-----------------------|-------------|--------|
-| build_screen          |             |        |
-| on_connected          |             |        |
-| on_disconnected       |             |        |
-| on_connection_problem |             |        |
+| Method Name           | params | return type | description                           |
+|-----------------------|--------|-------------|---------------------------------------|
+| build_screen          | parent | Screen      | you must define your controllers here |
+| on_connected          |        |             |                                       |
+| on_disconnected       |        |             |                                       |
+| on_connection_problem |        |             |                                       |
 
 ## <img src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" data-canonical-src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" width="20" height="20" />  Donation
 
