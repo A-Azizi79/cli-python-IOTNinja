@@ -75,7 +75,7 @@ ControllerGroup ها گروهی از کنترلر (Controller) ها هستند �
 
 If you like, You can donate us 😇
 
-Our btc wallet address : [12dFaoaBHNySGUCaBiih6YSkYQRQdDug8f]()
+Our BTC wallet address : [12dFaoaBHNySGUCaBiih6YSkYQRQdDug8f]()
 
 
 ## Contributing
