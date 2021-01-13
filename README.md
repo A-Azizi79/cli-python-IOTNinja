@@ -69,11 +69,15 @@ ControllerGroup ها گروهی از کنترلر (Controller) ها هستند �
  
 ## مستندات 🇮🇷 
 </div>
+
 App class
-| Method names  | description |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+
+
+| Method Name    | Description | params |
+|----------------|-------------|--------|
+| on_connected() |             |        |
+|                |             |        |
+|                |             |        |
 
 
 ## <img src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" data-canonical-src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" width="20" height="20" />  Donation
