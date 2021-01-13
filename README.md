@@ -59,6 +59,7 @@ run_app(MyApp, SocketConnection(), "192.168.9.6", "8080", "raspberryPI", "normal
   ControllerGroup کنترلرگروپ ها گروهی از کنترلر (Controller) ها هستند که میتونن در کنار هم قرار بگیرن (به صورت افقی)  و یا در زیر هم قرار بگیرند (به صورت عمودی ) مثل عکس زیر
 
 
+![alt text](https://www.tutlane.com/images/android/android_linearlayout_example_diagram.png)
 ## توضیحات
 
 
