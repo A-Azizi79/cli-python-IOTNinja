@@ -48,6 +48,14 @@ run_app(MyApp, SocketConnection(), "192.168.9.6", "8080", "raspberryPI", "normal
 
 ## Documentation 🇬🇧
 
+App class
+| Method Name           | params  | return type | brief description                                                     |
+|-----------------------|---------|-------------|-----------------------------------------------------------------------|
+| build_screen          | parent  | Screen      | Define your controllers here and add them in screen obj and return it |
+| on_connected          |         | None        | Called when successfully connected                                    |
+| on_disconnected       |         | None        | Called when disconnected                                              |
+| on_connection_problem | message | None        | Called when we have trouble in communicating                          |
+
 
 <div dir="rtl">
 
