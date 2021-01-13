@@ -71,7 +71,7 @@ ControllerGroup ها گروهی از کنترلر (Controller) ها هستند �
 
 </div>
 
-## <img src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" data-canonical-src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" width="25" height="25" />  Donation
+## <img src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" data-canonical-src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" width="15" height="15" />  Donation
 
 If you like, You can donate us 😇
 
