@@ -79,12 +79,12 @@ ControllerGroup ها گروهی از کنترلر (Controller) ها هستند �
 </div>
 
 App class
-| Method Name           | params  | return type | brief description                                                                    |
-|-----------------------|---------|-------------|--------------------------------------------------------------------------------------|
-| build_screen          | parent  | Screen      |  اضافه کنید و آنرا برگردانیدparent کنترلر ها خود را در اینجا تعریف کنید سپس آنرا در  |
-| on_connected          |         | None        | Called when successfully connected                                                   |
-| on_disconnected       |         | None        | Called when disconnected                                                             |
-| on_connection_problem | message | None        | Called when we have trouble in communicating    
+| Method Name           | params  | return type | brief description                                                                                                 |
+|-----------------------|---------|-------------|-------------------------------------------------------------------------------------------------------------------|
+| build_screen          | parent  | Screen      |  اضافه کنید و آنرا برگردانیدparent های خود را در این متد تعریف کنید سپس آنرا در آبجکت ControllerGroup ها و controller |
+| on_connected          |         | None        | Called when successfully connected                                                                                |
+| on_disconnected       |         | None        | Called when disconnected                                                                                          |
+| on_connection_problem | message | None        | Called when we have trouble in communicating                                                                      | 
 
 ## <img src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" data-canonical-src="https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png" width="20" height="20" />  Donation
 
