@@ -54,10 +54,10 @@ run_app(MyApp, SocketConnection(), "192.168.9.6", "8080", "raspberryPI", "normal
 
 ## مفاهیم 
 
-< -  Controller کنترلر ها المنت هایی هستند که ما داخل صفحه موبایلمون یا وبمون میبینیم و میتونیم با اون تعامل داشته باشیم برای مثال دکمه ها و یا متن ها یا مثلا عکس ها و ...
+Controller ها المنت هایی هستند که ما داخل صفحه موبایلمون یا وبمون میبینیم و میتونیم با اون تعامل داشته باشیم برای مثال دکمه ها و یا متن ها یا مثلا عکس ها و ...
 
-< -   ControllerGroup کنترلرگروپ ها گروهی از کنترلر (Controller) ها هستند که میتونن در کنار هم قرار بگیرن (HorizontalControllerGroup به صورت افقی)  و یا در زیر هم قرار بگیرند (VerticalControllerGroup به صورت عمودی ) مثل عکس زیر
-به صورت عمودی ) مثل عکس زیر
+ControllerGroup ها گروهی از کنترلر (Controller) ها هستند که میتونن در کنار هم قرار بگیرن که در حال حاظر دو دسته هستند اولی (HorizontalControllerGroup به صورت افقی)  و دومی (VerticalControllerGroup به صورت عمودی ) مثل عکس زیر میتونیم فرض کنیم که چنتا دکمه داریم که میتونن به دو شکل قرار بگیرن یا کنار هم باشن یا زیر هم دیگه 
+
 
 ![alt text](https://www.tutlane.com/images/android/android_linearlayout_example_diagram.png)
 
