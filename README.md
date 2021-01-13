@@ -8,7 +8,7 @@ IOTNinja is a Python library for dealing with word pluralization.
 </br>
 </br>
 
-
+![alt text](https://localbitcoinnow.com/wp-content/uploads/2019/12/The-bit-logo-e1575819611411.png)
 ![alt text](http://www.upsara.com/images/n942896_.jpg)
 
 ## Installation
