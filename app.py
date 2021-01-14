@@ -28,6 +28,10 @@ class Context(ABC):
 class App(Context):
 
     @abstractmethod
+    def build_screen(self, parent: Screen) -> Screen:
+        pass
+
+    @abstractmethod
     def on_connected(self):
         pass
 
@@ -36,11 +40,7 @@ class App(Context):
         pass
 
     @abstractmethod
-    def build_screen(self, parent: Screen) -> Screen:
-        pass
-
-    @abstractmethod
-    def on_connection_problem(self, msg):
+    def on_connection_problem(self, message):
         pass
 
 

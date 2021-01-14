@@ -8,11 +8,6 @@ from presentation.controllers import *
 
 class MyApp(App):
 
-    def build_top_card(self) -> VerticalControllerGroup:
-        param = VerticalControllerGroup("vertical")
-        param.add(TextController("hello world", "id32"))
-        return param
-
     def on_connected(self):
         pass
 
@@ -20,7 +15,6 @@ class MyApp(App):
         pass
 
     def build_screen(self, parent: Screen) -> Screen:
-        parent.add_controller_group(self.build_top_card())
         return parent
 
     def on_connection_problem(self, msg):
